@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day: MyString
+  open: 1
+  close: 1
+  restaurant_id: 1
+
+two:
+  day: MyString
+  open: 1
+  close: 1
+  restaurant_id: 1
