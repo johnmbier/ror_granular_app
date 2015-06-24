@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  #get 'sessions/new'
+
   root 'restaurants#index'
 
   resources :restaurants
+  
+  get '/login' => 'session#new'
+  post '/login' => 'session#create'
+  delete '/log_out' => 'session#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

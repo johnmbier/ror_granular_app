@@ -14,3 +14,8 @@ JSON.parse(restaurants).each do |restaurant|
                     high_price: restaurant['price'][1],
                     hours: restaurant['hours'])
 end
+User.destroy_all
+
+%w(Heidi Erik Leslie Devan John Brian).each do |name|
+  User.create(name: name, password: name.reverse)
+end

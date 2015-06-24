@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RorGranularApp</title>
+  <title>uhhh</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<% flash.each do |key, msg| %>
+  <p class="<%= key %>"><%= msg %></p>
+<% end %>
+<%= user_login_or_logout %>
 <%= yield %>
 
 </body>
