@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+// $(document).ready(function() {
+//   $( "#new_restaurant" ).submit(function( event ) {
+//     var invalid = 
+//   }
+
+// });

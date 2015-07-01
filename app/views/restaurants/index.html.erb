@@ -8,19 +8,45 @@
 <!-- beast mode
       <th>Today's Hours</th>
     -->
-    </tr>
+      </tr>
   </thead>
 
-  <% @restaurants.each do |restaurant| %>
-
-    <tbody>
-        <tr>
-          <td><%= link_to restaurant.name, restaurant %></td>
-          <td><%= restaurant.website %></td>
-        </tr>
-  <% end %>
+  <tbody>
+  <%# @restaurants.each do |restaurant| %>
+  <%= render @restaurants %>
+<%#= render partial: 'restaurant', collection: @restaurants %>
+        <!-- <tr>
+          <td><%#= link_to restaurant.name, restaurant %></td>
+          <td><%#= restaurant.website %></td>
+        </tr> -->
+  <%# end %>
     </tbody>
 </table>
 <br>
+<h1>New Restaurant</h1>
+<body>
+  <!-- <form action="javascript:alert( 'success!' );">
+    <div> -->
+     <!-- <input type="text">
+     <input type="submit"> -->
+
+<%= form_for @restaurant, remote: true do |f| %> 
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 <br>
-<%= link_to "Add New Restaurant", new_restaurant_path %>
+  <%= f.label :website %>
+  <%= f.text_field :website %>
+<br>
+  
+  <%= f.label :low_price %>
+  <%= f.text_field :low_price %>
+<br>
+  <%= f.label :high_price %>
+  <%= f.text_field :high_price %>
+<br>
+  <%= f.submit "Submit New Restaurant" %>
+<% end %>
+    <!-- </div> -->
+   <!-- </form> -->
+<br>
+<%#= link_to "Add New Restaurant", new_restaurant_path %>
