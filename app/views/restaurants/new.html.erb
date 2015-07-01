@@ -1,5 +1,10 @@
 <h1>New Restaurant</h1>
-
+<body>
+  <form action="javascript:alert( 'success!' );">
+    <div>
+     <!-- <input type="text">
+     <input type="submit"> -->
+    
 <%= form_for @restaurant do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -15,3 +20,68 @@
 <br>
   <%= f.submit "Submit New Restaurant" %>
 <% end %>
+    </div>
+   </form>
+<span></span>
+ 
+ <script>
+ $(function() { 
+        $(':submit').click(function(e) {
+                $(':text, textarea').each(function() {
+                        if ($(this).val().length == 0) {
+                                $(this).css('border', '2px solid red');
+                                e.preventDefault();
+                        }
+                });
+        });
+});
+ </script>
+
+ <!-- $(function() { 
+        $(':submit').click(function(e) {
+                $(':text, textarea').each(function() {
+                        if ($(this).val().length == 0) {
+                                $(this).css('border', '2px solid red');
+                                e.preventDefault();
+                        }
+                });
+        });
+}); -->
+
+
+<!-- $( "form" ).submit(function( event ) {
+  if ( $( "form:first" ).val().length >= 1 ) {
+    $( "span" ).text( "Validated..." ).show();
+    return;
+  }
+ 
+  $( "span" ).text( "Not valid!" ).show().fadeOut( 1000 );
+  event.preventDefault();
+}); -->
+
+
+
+<!-- // $( "form" ).submit(function( event ) {
+//   if ( $( "this" ).val().length >= 1 ) {
+//     $( "span" ).text( "Restaurant Added! " ).show();
+//     return;
+//   }
+ 
+//   $( "span" ).text( "Not valid!" ).show().fadeOut( 1000 );
+//   event.preventDefault();
+// });
+ -->
+
+ <!-- <form action="" method="post" name="form" id="form">
+// <input type="text" placeholder="Your email*" name="email" id="email">
+// <input type="text" placeholder="Your name*" autocomplete=off name="name" id="user_name"
+// <button type="submit" id="signup" value="Sign me up!">Sign Up</button>
+// </form> -->
+<!-- // $('#form').submit(function() {
+//     if ($.trim($("#name").val()) === "" || $.trim($("#website").val()) === "") 
+//        ($.trim($("#low_price").val()) === "" || $.trim($("#high_price").val()) === "") {
+//         alert('you did not fill out one of the fields');
+//         return false;
+//     }
+// }); -->
+
